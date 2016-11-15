@@ -306,58 +306,43 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu">                
                   <li class="active">
-                      <a class="" href="index.html">
+                      <g:link controller="main" action="index">
                           <i class="icon_house_alt"></i>
                           <span>Tareas</span>
-                      </a>
+                      </g:link>
                   </li>
 				  <li class="sub-menu">
-                      <a href="javascript:;" class="">
+                      <g:link controller="proyecto" action="index">
                           <i class="icon_document_alt"></i>
                           <span>Proyectos</span>
                           <span class="menu-arrow arrow_carrot-right"></span>
-                      </a>
-                      <ul class="sub">
-                          <li><a class="" href="form_component.html">Form Elements</a></li>                          
-                          <li><a class="" href="form_validation.html">Form Validation</a></li>
-                      </ul>
+                      </g:link>
                   </li>       
                   <li class="sub-menu">
-                      <a href="javascript:;" class="">
+                      <g:link controller="espera" action="index">
                           <i class="icon_desktop"></i>
                           <span>En Espera</span>
                           <span class="menu-arrow arrow_carrot-right"></span>
-                      </a>
-                      <ul class="sub">
-                          <li><a class="" href="general.html">Elements</a></li>
-                          <li><a class="" href="buttons.html">Buttons</a></li>
-                          <li><a class="" href="grids.html">Grids</a></li>
-                      </ul>
+                      </g:link>
                   </li>
                   <li>
-                      <g:link controller="tarea" action="list">
+                      <g:link controller="accion" action="list">
                           <i class="icon_genius"></i>
                           <span>Accion</span>
                       </g:link>
                   </li>
                   <li>                     
-                      <a class="" href="chart-chartjs.html">
+                      <g:link controller="quizas" action="index">
                           <i class="icon_piechart"></i>
                           <span>Quizas</span>
-                          
-                      </a>
-                                         
+                      </g:link>
                   </li>
-                             
                   <li class="sub-menu">
-                      <a href="javascript:;" class="">
+                      <g:link controller="reportes" action="index">
                           <i class="icon_table"></i>
                           <span>Reportes</span>
                           <span class="menu-arrow arrow_carrot-right"></span>
-                      </a>
-                      <ul class="sub">
-                          <li><a class="" href="basic_table.html">Basic Table</a></li>
-                      </ul>
+                      </g:link>
                   </li>
                   
                  <!--   <li class="sub-menu">

@@ -40,7 +40,7 @@
 			En Espera
 			</th>
 			<th>
-			Accion
+			Proximas Acciones
 			</th>	
 			<th>
 			Quizas

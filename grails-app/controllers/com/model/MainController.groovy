@@ -12,5 +12,6 @@ class MainController {
     	//	listInitTask.push([name:'Nombre', lastName:'Carrillo', number:i])
     	//}
     	//render view:'index',model:[listInitTask:listInitTask]
+    	render view:'/index'
     }
 }
