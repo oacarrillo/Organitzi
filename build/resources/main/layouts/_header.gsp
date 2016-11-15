@@ -8,7 +8,7 @@
     <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
     <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>Creative - Bootstrap Admin Template</title>
+    <title>Organitzi</title>
 
     
     <asset:stylesheet src="bootstrap.min.css" />
@@ -23,6 +23,7 @@
     <asset:stylesheet src="style-responsive.css" />
 	<asset:stylesheet src="xcharts.min.css" />	
 	<asset:stylesheet src="jquery-ui-1.10.4.min.css" />
+    <asset:stylesheet src="switch.css" />
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
     <!--[if lt IE 9]>
       <script src="js/html5shiv.js"></script>
@@ -265,7 +266,7 @@
                             <span class="profile-ava">
                                 <asset:image src="avatar1_small.jpg" />
                             </span>
-                            <span class="username">Jenifer Smith</span>
+                            <span class="username"><sec:username /></span>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout">
@@ -283,7 +284,7 @@
                                 <a href="#"><i class="icon_chat_alt"></i> Chats</a>
                             </li>
                             <li>
-                                <a href="login.html"><i class="icon_key_alt"></i> Log Out</a>
+                                <a href="${createLink(controller:'logout',action:'index')}"><i class="icon_key_alt"></i> Log Out</a>
                             </li>
                             <li>
                                 <a href="documentation.html"><i class="icon_key_alt"></i> Documentation</a>
@@ -315,20 +316,18 @@
                       <g:link controller="proyecto" action="index">
                           <i class="icon_document_alt"></i>
                           <span>Proyectos</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
                       </g:link>
                   </li>       
                   <li class="sub-menu">
                       <g:link controller="espera" action="index">
                           <i class="icon_desktop"></i>
                           <span>En Espera</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
                       </g:link>
                   </li>
                   <li>
-                      <g:link controller="accion" action="list">
+                      <g:link controller="accion" action="index">
                           <i class="icon_genius"></i>
-                          <span>Accion</span>
+                          <span>Proximas Acciones</span>
                       </g:link>
                   </li>
                   <li>                     
@@ -341,7 +340,6 @@
                       <g:link controller="reportes" action="index">
                           <i class="icon_table"></i>
                           <span>Reportes</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
                       </g:link>
                   </li>
                   

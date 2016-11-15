@@ -2,7 +2,10 @@
 
 	<section id="main-content">
 	          <section class="wrapper">  
-	          			hola reportes
+
+reportes
+
+
 	          </section>
 	</section>
 

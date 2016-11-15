@@ -18,59 +18,15 @@
     <!--custome script for all page-->
     <asset:javascript src="scripts.js" />
     <!-- custom script for this page-->
-  <asset:javascript src="xcharts.min.js" />
-  <asset:javascript src="jquery.autosize.min.js" />
-  <asset:javascript src="jquery.placeholder.min.js" />
-  <asset:javascript src="jquery.slimscroll.min.js" />
-  <script>
-
-      //knob
-      $(function() {
-        $(".knob").knob({
-          'draw' : function () { 
-            $(this.i).val(this.cv + '%')
-          }
-        })
-      });
-
-      //carousel
-      $(document).ready(function() {
-          $("#owl-slider").owlCarousel({
-              navigation : true,
-              slideSpeed : 300,
-              paginationSpeed : 400,
-              singleItem : true
-
-          });
-      });
-
-      //custom select box
-
-      $(function(){
-          $('select.styled').customSelect();
-      });
-	  
-	  /* ---------- Map ---------- */
-	$(function(){
-	  $('#map').vectorMap({
-	    map: 'world_mill_en',
-	    series: {
-	      regions: [{
-	        values: gdpData,
-	        scale: ['#000', '#000'],
-	        normalizeFunction: 'polynomial'
-	      }]
-	    },
-		backgroundColor: '#eef3f7',
-	    onLabelShow: function(e, el, code){
-	      el.html(el.html()+' (GDP - '+gdpData[code]+')');
-	    }
-	  });
-	});
-
-
-
-  />
+    <asset:javascript src="xcharts.min.js" />
+    <asset:javascript src="jquery.autosize.min.js" />
+    <asset:javascript src="jquery.placeholder.min.js" />
+    <asset:javascript src="jquery.slimscroll.min.js" />
+    <asset:javascript src="echarts-all.js" />
+  
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="https://api.trello.com/1/client.js?key=854075281935fab2304a5a2e425b1893"></script>
 
   </body>
 </html>
+

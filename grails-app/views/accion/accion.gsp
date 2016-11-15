@@ -10,7 +10,7 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-10">
+							<div class="col-md-12">
 								<div class="row">
 									<div class="col-md-8">
 										<h1 class="text-left">
@@ -51,7 +51,10 @@
 															<input type="text" name="proyecto"><br>
 														</td>
 														<td>
-															<input type="checkbox" name="your-group" value="unit-in-group" class="center-block"/>
+															<label style="" class="pull-left">
+										                    	<input class="ios-switch"  type="checkbox">
+										                		<div class="switch"></div>
+										               		</label>
 														</td>
 														<td>
 															<a href="url" class="btn btn-primary">Guardar</a>
@@ -70,7 +73,10 @@
 														<input type="text" name="proyecto"><br>
 														</td>
 														<td>
-															<input type="checkbox" name="your-group" value="unit-in-group" class="center-block"/>
+															<label style="" class="pull-left">
+										                    	<input class="ios-switch"  type="checkbox">
+										                		<div class="switch"></div>
+										               		</label>
 														</td>
 														<td>
 															<a href="url" class="btn btn-primary">Guardar</a>
