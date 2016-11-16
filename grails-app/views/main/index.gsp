@@ -73,25 +73,6 @@
 
 var tareas = "${tareas}"
 
-
-
-
-
-//oscar
-/* 
-NOTE: The Trello client library has been included as a Managed Resource.  To include the client library in your own code, you would include jQuery and then
-
-<script src="https://api.trello.com/1/client.js?key=your_application_key">...
-
-See https://trello.com/docs for a list of available API URLs
-
-The API development board is at https://trello.com/api
-
-The &dummy=.js part of the managed resource URL is required per http://doc.jsfiddle.net/basic/introduction.html#add-resources
-*/
-
-
-
 $(window).load(function(){
 	Trello.authorize({
 		type: 'popup',
@@ -118,7 +99,7 @@ var onAuthorize = function() {
             $.each(cards, function(ix, card) {
 
             	if(tareas.indexOf(card.id)==-1){
-            		var tr = $("<tr id='"+card.id+"'><td>"+card.name+"</td><td>"+'<label style="" class="pull-left"><input class="ios-switch card-switch" tipo="1" type="checkbox"><div class="switch"></div></label>'+"</td><td>"+'<label style="" class="pull-left"><input class="ios-switch card-switch"  tipo="2" type="checkbox"><div class="switch"></div></label>'+"</td><td>"+'<label style="" class="pull-left"><input class="ios-switch card-switch" tipo="3" type="checkbox"><div class="switch"></div></label>'+"</td><td>"+'<label style="" class="pull-left"><input class="ios-switch card-switch" tipo="4" type="checkbox"><div class="switch"></div></label>'+"</td><td><button class='btn btn-primary' onclick='confirmarTarea("+'"'+card.id+'"'+',"'+card.name+'"'+")'>Confirmar</button></td><td><button class='btn btn-primary' onclick='eliminarTarea("+'"'+card.id+'"'+")'>Eliminar</button></td></tr>")
+            		var tr = $("<tr id='"+card.id+"'><td>"+card.name+"</td><td>"+'<label style="" class="pull-left"><input class="ios-switch card-switch" tipo="1" type="checkbox"><div class="switch"></div></label>'+"</td><td>"+'<label style="" class="pull-left"><input class="ios-switch card-switch"  tipo="2" type="checkbox"><div class="switch"></div></label>'+"</td><td>"+'<label style="" class="pull-left"><input class="ios-switch card-switch" tipo="3" type="checkbox"><div class="switch"></div></label>'+"</td><td>"+'<label style="" class="pull-left"><input class="ios-switch card-switch" tipo="4" type="checkbox"><div class="switch"></div></label>'+"</td><td><button class='btn btn-primary' onclick='confirmarTarea("+'"'+card.id+'"'+',"'+card.name+'"'+")'>Confirmar</button></td><td><button class='btn btn-primary' onclick='eliminarTarea("+'"'+card.id+'"'+',"'+card.name+'"'+")'>Eliminar</button></td></tr>")
 
 	            	tr.appendTo($('#tareas > tbody'));
             	}
@@ -133,7 +114,6 @@ var onAuthorize = function() {
     });
 
 };
-
 
 function oscar(){
 	$('#tareas > tbody > tr').each(function(){
@@ -166,7 +146,29 @@ function confirmarTarea(id,name){
 }
 
 
-//oscar fin
+function eliminarTarea(id,name){
+	console.log(id +" "+ name)
+	if($("#"+id).find(".card-switch:checked").size()==0){
+		alert("debes escoger al menos una opcion")
+		return
+	}
+	$.ajax({
+        method: 'POST',
+        url: "${createLink(action:'delete', controller:'tarea')}",
+        data:{
+        	tipo:$("#"+id).find(".card-switch:checked").attr("tipo"),
+            name: name,
+            idTrello: id,
+            },
+        success: function(result) {
+        	$("#"+id).remove()
+        },
+        error: function(status, text, result, xhr) {
+        	alert("mal")
+        }
+    });
+
+}
 
 </script>
 

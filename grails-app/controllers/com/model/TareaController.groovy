@@ -15,8 +15,17 @@ class TareaController {
     
     def delete(){
     	//Tarea.get(params.id).delete(flush:true, failOnError:true)
-    	println "Borrando tarea: "+params.id
-    	redirect action:'list'
+    	//println "Borrando tarea: "+params.id
+    	//redirect action:'list'
+        def user = springSecurityService.currentUser
+        def nuevaTarea = new Tarea (params.name,params.idTrello,params.tipo=="1"?true:false,Integer.parseInt(params.tipo),false,user)
+        if(!nuevaTarea.validate())
+        {
+            render status:400, text:"Error parametros"
+            return
+        }
+        nuevaTarea.save(flush:true,failOnError:true)
+        render status:200        
     }
 
     def create(){

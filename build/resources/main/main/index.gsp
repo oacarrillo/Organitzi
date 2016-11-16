@@ -73,25 +73,6 @@
 
 var tareas = "${tareas}"
 
-
-
-
-
-//oscar
-/* 
-NOTE: The Trello client library has been included as a Managed Resource.  To include the client library in your own code, you would include jQuery and then
-
-<script src="https://api.trello.com/1/client.js?key=your_application_key">...
-
-See https://trello.com/docs for a list of available API URLs
-
-The API development board is at https://trello.com/api
-
-The &dummy=.js part of the managed resource URL is required per http://doc.jsfiddle.net/basic/introduction.html#add-resources
-*/
-
-
-
 $(window).load(function(){
 	Trello.authorize({
 		type: 'popup',
@@ -134,7 +115,6 @@ var onAuthorize = function() {
 
 };
 
-
 function oscar(){
 	$('#tareas > tbody > tr').each(function(){
 		console.log($(this).attr('id')+$(this).find("[tipo='proyecto']").is(":checked"))
@@ -153,7 +133,7 @@ function confirmarTarea(id,name){
         data:{
         	tipo:$("#"+id).find(".card-switch:checked").attr("tipo"),
             name: name,
-            id: id,
+            idTrello: id,
             },
         success: function(result) {
         	$("#"+id).remove()
@@ -164,9 +144,6 @@ function confirmarTarea(id,name){
     });
 
 }
-
-
-//oscar fin
 
 </script>
 
