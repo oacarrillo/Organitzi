@@ -73,6 +73,8 @@
 
 var tareas = "${tareas}"
 
+//console.log(":X"+tareas)
+
 $(window).load(function(){
 	Trello.authorize({
 		type: 'popup',
@@ -99,7 +101,7 @@ var onAuthorize = function() {
             $.each(cards, function(ix, card) {
 
             	if(tareas.indexOf(card.id)==-1){
-            		var tr = $("<tr id='"+card.id+"'><td>"+card.name+"</td><td>"+'<label style="" class="pull-left"><input class="ios-switch card-switch" tipo="1" type="checkbox"><div class="switch"></div></label>'+"</td><td>"+'<label style="" class="pull-left"><input class="ios-switch card-switch"  tipo="2" type="checkbox"><div class="switch"></div></label>'+"</td><td>"+'<label style="" class="pull-left"><input class="ios-switch card-switch" tipo="3" type="checkbox"><div class="switch"></div></label>'+"</td><td>"+'<label style="" class="pull-left"><input class="ios-switch card-switch" tipo="4" type="checkbox"><div class="switch"></div></label>'+"</td><td><button class='btn btn-primary' onclick='confirmarTarea("+'"'+card.id+'"'+',"'+card.name+'"'+")'>Confirmar</button></td><td><button class='btn btn-primary' onclick='eliminarTarea("+'"'+card.id+'"'+")'>Eliminar</button></td></tr>")
+            		var tr = $("<tr id='"+card.id+"'><td>"+card.name+"</td><td>"+'<label style="" class="pull-left"><input class="ios-switch card-switch" tipo="1" type="checkbox"><div class="switch"></div></label>'+"</td><td>"+'<label style="" class="pull-left"><input class="ios-switch card-switch"  tipo="2" type="checkbox"><div class="switch"></div></label>'+"</td><td>"+'<label style="" class="pull-left"><input class="ios-switch card-switch" tipo="3" type="checkbox"><div class="switch"></div></label>'+"</td><td>"+'<label style="" class="pull-left"><input class="ios-switch card-switch" tipo="4" type="checkbox"><div class="switch"></div></label>'+"</td><td><button class='btn btn-primary' onclick='confirmarTarea("+'"'+card.id+'"'+',"'+card.name+'"'+")'>Confirmar</button></td><td><button class='btn btn-primary' onclick='eliminarTarea("+'"'+card.id+'"'+',"'+card.name+'"'+")'>Eliminar</button></td></tr>")
 
 	            	tr.appendTo($('#tareas > tbody'));
             	}
@@ -130,6 +132,31 @@ function confirmarTarea(id,name){
 	$.ajax({
         method: 'POST',
         url: "${createLink(action:'create', controller:'tarea')}",
+        data:{
+        	tipo:$("#"+id).find(".card-switch:checked").attr("tipo"),
+            name: name,
+            idTrello: id,
+            },
+        success: function(result) {
+        	$("#"+id).remove()
+        },
+        error: function(status, text, result, xhr) {
+        	alert("mal")
+        }
+    });
+
+}
+
+
+function eliminarTarea(id,name){
+	console.log(id +" "+ name)
+	if($("#"+id).find(".card-switch:checked").size()==0){
+		alert("debes escoger al menos una opcion")
+		return
+	}
+	$.ajax({
+        method: 'POST',
+        url: "${createLink(action:'delete', controller:'tarea')}",
         data:{
         	tipo:$("#"+id).find(".card-switch:checked").attr("tipo"),
             name: name,

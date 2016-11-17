@@ -73,6 +73,8 @@
 
 var tareas = "${tareas}"
 
+//console.log(":X"+tareas)
+
 $(window).load(function(){
 	Trello.authorize({
 		type: 'popup',

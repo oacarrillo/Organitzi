@@ -5,7 +5,6 @@ import grails.plugin.springsecurity.annotation.Secured
 class MainController {
 
     def springSecurityService
-
     def index() {
     	//println params
     	//render view:'/index',model:[palabra:'vaca']

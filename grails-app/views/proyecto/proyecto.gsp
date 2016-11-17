@@ -64,8 +64,12 @@
                
           </section>
 </section>
-
-
-
 <g:render template = "/layouts/footer" />
 
+
+<script>
+var tareas = "${tareas}"
+console.log(":P"+tareas)	
+
+
+</script>>

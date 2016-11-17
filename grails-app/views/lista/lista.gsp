@@ -14,7 +14,7 @@
 								<div class="row">
 									<div class="col-md-8">
 										<h1 class="text-left">
-											Lista de Proyectos
+											Lista de tareas en Espera
 										</h1>
 									</div>
 								</div>
@@ -26,7 +26,10 @@
 													Nombre Tarea
 													</th>
 													<th>
-													Eliminar
+													Fecha de creación
+													</th>													
+													<th>
+													Acciones
 													</th>
 												</tr>
 												</thead>
@@ -34,19 +37,27 @@
 												<tbody>
 													<tr>
 														<td>
-															Realizar proyecto de patrones
+															Tarea pendiente numero uno
 														</td>
 														<td>
-															<a href="url" class="btn btn-primary">Ver Proyecto</a>
+														 	<input type="text" name="fecha"><br>
+														</td>
+														<td>
+															<a href="url" class="btn btn-primary">Guardar</a>
+															<a href="url" class="btn btn-primary">Finalizar</a>
 															<a href="url" class="btn btn-primary">Eliminar</a>
 														</td>				
 													</tr>
 													<tr>
 														<td>
-															Proyecto uno
+															Tarea pendiente numero dos
 														</td>
 														<td>
-															<a href="url" class="btn btn-primary">Ver Proyecto</a>
+														 	<input type="text" name="fecha"><br>
+														</td>
+														<td>
+															<a href="url" class="btn btn-primary">Guardar</a>
+															<a href="url" class="btn btn-primary">Finalizar</a>
 															<a href="url" class="btn btn-primary">Eliminar</a>
 														</td>				
 													</tr>													
@@ -64,12 +75,8 @@
                
           </section>
 </section>
+
+
+
 <g:render template = "/layouts/footer" />
 
-
-<script>
-var tareas = "${tareas}"
-console.log(tareas)	
-
-
-</script>>

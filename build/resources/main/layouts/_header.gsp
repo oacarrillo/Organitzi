@@ -332,13 +332,13 @@
                   </li>
                   <li>                     
                       <g:link controller="quizas" action="index">
-                          <i class="icon_piechart"></i>
+                          <i class="icon_table"></i>
                           <span>Quizas</span>
                       </g:link>
                   </li>
                   <li class="sub-menu">
-                      <g:link controller="reportes" action="index">
-                          <i class="icon_table"></i>
+                      <g:link controller="lista" action="index">
+                          <i class="icon_piechart"></i>
                           <span>Reportes</span>
                       </g:link>
                   </li>
