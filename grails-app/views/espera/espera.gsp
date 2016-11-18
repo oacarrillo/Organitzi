@@ -36,17 +36,23 @@
 
 												<tbody>
 													<g:each in="${tareas}" var="tarea">
-														<tr>
+														<tr id="${tarea.id}">
 															<td>
 																${tarea.name}
 															</td>
 															<td>
-															 	<input type="date" name="bday">
+															 	<input id="date${tarea.id}" type="date" name="bday" value="${tarea.scheduledDate.format('yyyy-MM-dd')}">
 															</td>
 															<td>
-																<a href="url" class="btn btn-primary">Guardar</a>
-																<a href="url" class="btn btn-primary">Finalizar</a>
-																<a href="url" class="btn btn-primary">Eliminar</a>
+																<button class='btn btn-primary' onclick="guardar('${tarea.id}')">Guardar</button>
+
+											                    <g:link controller="espera" action="finalizar" id="${tarea.id}">
+											                        <button class='btn btn-primary'>Finalizar</button>
+											                    </g:link>
+											                    <g:link controller="espera" action="delete" id="${tarea.id}">
+											                        <button class='btn btn-primary'>Eliminar</button>
+											                    </g:link>
+
 															</td>				
 														</tr>
 													</g:each>
@@ -68,5 +74,27 @@
 
 
 <g:render template = "/layouts/footer" />
+
+
+<script type="text/javascript">
+	function guardar(id){
+		var fecha=$("#date"+id).val()
+		$.ajax({
+	        method: 'POST',
+	        url: "${createLink(action:'guardar', controller:'espera')}",
+	        data:{
+	        	id:id,
+	        	fecha:fecha
+	            },
+	        success: function(result) {
+	        	alert("bien")
+	        },
+	        error: function(status, text, result, xhr) {
+	        	alert("mal")
+	        }
+	    });
+
+	}
+</script>
 
 

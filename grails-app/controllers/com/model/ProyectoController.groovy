@@ -8,7 +8,7 @@ class ProyectoController {
     def index() { 
 		
     	def user = springSecurityService.currentUser
-        def tareas =  Tarea.findAllByTypeAndOwner(1,user)
+        def tareas =  Tarea.findAllByIsProjectAndOwner(true,user)
         render view:'proyecto',model:[tareas:tareas]
 
 //		render view:'proyecto'

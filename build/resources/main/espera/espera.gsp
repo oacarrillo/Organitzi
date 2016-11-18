@@ -45,8 +45,14 @@
 															</td>
 															<td>
 																<a href="url" class="btn btn-primary">Guardar</a>
-																<a href="url" class="btn btn-primary">Finalizar</a>
-																<a href="url" class="btn btn-primary">Eliminar</a>
+
+											                    <g:link controller="espera" action="finalizar" id="${tarea.id}">
+											                        <button class='btn btn-primary'>Finalizar</button>
+											                    </g:link>
+											                    <g:link controller="espera" action="delete" id="${tarea.id}">
+											                        <button class='btn btn-primary'>Eliminar</button>
+											                    </g:link>
+
 															</td>				
 														</tr>
 													</g:each>

@@ -46,7 +46,7 @@
 																${tarea.name}
 															</td>
 															<td>
-															 	<input type="text" name="fecha"><br>
+															 	<input type="date" name="bday">
 															</td>
 															<td>
 																<input type="text" name="proyecto"><br>

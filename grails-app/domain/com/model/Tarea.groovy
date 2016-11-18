@@ -7,6 +7,7 @@ class Tarea {
 	String idTrello
 	Boolean isProject
 	Boolean enabled
+	Boolean finished
 	Date scheduledDate
 	Integer type //1.Proyecto, 2.Espera, 3.Accion, 4.Quizas
 	Tarea project
@@ -26,6 +27,7 @@ public Tarea (name,idTrello,isProject,type,enabled,owner)
 	this.isProject= isProject
 	this.type= type
 	this.enabled=enabled
+	this.finished=false
 	this.owner=owner
 }
 
