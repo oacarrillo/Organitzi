@@ -32,24 +32,17 @@
 												</thead>
 
 												<tbody>
+												<g:each in="${tareas}" var="tarea">
 													<tr>
 														<td>
-															Realizar proyecto de patrones
+															${tarea.name}
 														</td>
 														<td>
-															<a href="url" class="btn btn-primary">Ver Proyecto</a>
+															<a href="${createLink(action:'listar', controller:'proyecto', id:tarea.id)}" class="btn btn-primary">Ver Proyecto</a>
 															<a href="url" class="btn btn-primary">Eliminar</a>
 														</td>				
 													</tr>
-													<tr>
-														<td>
-															Proyecto uno
-														</td>
-														<td>
-															<a href="url" class="btn btn-primary">Ver Proyecto</a>
-															<a href="url" class="btn btn-primary">Eliminar</a>
-														</td>				
-													</tr>													
+												</g:each>												
 												</tbody>
 											</table>
 
@@ -69,7 +62,7 @@
 
 <script>
 var tareas = "${tareas}"
-console.log(":P"+tareas)	
+console.log(":P "+tareas)	
 
 
 </script>>

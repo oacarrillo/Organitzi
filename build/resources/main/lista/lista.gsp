@@ -14,7 +14,7 @@
 								<div class="row">
 									<div class="col-md-8">
 										<h1 class="text-left">
-											Lista de tareas en Espera
+											Lista de tareas de Proyectos
 										</h1>
 									</div>
 								</div>

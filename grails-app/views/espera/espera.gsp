@@ -10,7 +10,7 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-8">
+							<div class="col-md-12">
 								<div class="row">
 									<div class="col-md-8">
 										<h1 class="text-left">
@@ -19,7 +19,7 @@
 									</div>
 								</div>
 								<br><br>
-										<table class="table table-bordered">
+										<table class="table table-bordered table-condensed table-responsive">
 												<thead>
 												<tr>
 													<th>
@@ -35,37 +35,26 @@
 												</thead>
 
 												<tbody>
-													<tr>
-														<td>
-															Tarea pendiente numero uno
-														</td>
-														<td>
-														 	<input type="text" name="fecha"><br>
-														</td>
-														<td>
-															<a href="url" class="btn btn-primary">Guardar</a>
-															<a href="url" class="btn btn-primary">Finalizar</a>
-															<a href="url" class="btn btn-primary">Eliminar</a>
-														</td>				
-													</tr>
-													<tr>
-														<td>
-															Tarea pendiente numero dos
-														</td>
-														<td>
-														 	<input type="text" name="fecha"><br>
-														</td>
-														<td>
-															<a href="url" class="btn btn-primary">Guardar</a>
-															<a href="url" class="btn btn-primary">Finalizar</a>
-															<a href="url" class="btn btn-primary">Eliminar</a>
-														</td>				
-													</tr>													
+													<g:each in="${tareas}" var="tarea">
+														<tr>
+															<td>
+																${tarea.name}
+															</td>
+															<td>
+															 	<input type="date" name="bday">
+															</td>
+															<td>
+																<a href="url" class="btn btn-primary">Guardar</a>
+																<a href="url" class="btn btn-primary">Finalizar</a>
+																<a href="url" class="btn btn-primary">Eliminar</a>
+															</td>				
+														</tr>
+													</g:each>
 												</tbody>
 											</table>
 
 							</div>
-							<div class="col-md-4">
+							<div class="col-md-0">
 							</div>
 						</div>
 					</div>
@@ -79,4 +68,5 @@
 
 
 <g:render template = "/layouts/footer" />
+
 

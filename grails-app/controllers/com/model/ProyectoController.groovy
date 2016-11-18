@@ -8,14 +8,15 @@ class ProyectoController {
     def index() { 
 		
     	def user = springSecurityService.currentUser
-        def tareas
-        def ids = user.tareas*.idTrello.flatten()
-        for(id in ids){
-            tareas+=id+","
-        }
+        def tareas =  Tarea.findAllByTypeAndOwner(1,user)
         render view:'proyecto',model:[tareas:tareas]
 
 //		render view:'proyecto'
 
     }
+   def listar(){
+   		def proyectoActual=Tarea.get(params.id)
+   		
+
+   }
 }

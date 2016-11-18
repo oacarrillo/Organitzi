@@ -19,7 +19,7 @@ class User implements Serializable {
 	boolean accountExpired = false
 	boolean accountLocked = false
 	boolean passwordExpired = false
-
+	
 	static hasMany = [tareas: Tarea]
 
 	public User (username,password)

@@ -40,50 +40,30 @@
 												</thead>
 
 												<tbody>
-													<tr>
-														<td>
-															Tarea pendiente numero uno
-														</td>
-														<td>
-														 	<input type="text" name="fecha"><br>
-														</td>
-														<td>
-															<input type="text" name="proyecto"><br>
-														</td>
-														<td>
-															<label style="" class="pull-left">
-										                    	<input class="ios-switch"  type="checkbox">
-										                		<div class="switch"></div>
-										               		</label>
-														</td>
-														<td>
-															<a href="url" class="btn btn-primary">Guardar</a>
-															<a href="url" class="btn btn-primary">Finalizar</a>
-															<a href="url" class="btn btn-primary">Eliminar</a>
-														</td>				
-													</tr>
-													<tr>
-														<td>
-															Tarea pendiente numero dos
-														</td>
-														<td>
-														 	<input type="text" name="fecha"><br>
-														</td>
-														<td>
-														<input type="text" name="proyecto"><br>
-														</td>
-														<td>
-															<label style="" class="pull-left">
-										                    	<input class="ios-switch"  type="checkbox">
-										                		<div class="switch"></div>
-										               		</label>
-														</td>
-														<td>
-															<a href="url" class="btn btn-primary">Guardar</a>
-															<a href="url" class="btn btn-primary">Finalizar</a>
-															<a href="url" class="btn btn-primary">Eliminar</a>
-														</td>				
-													</tr>													
+													<g:each in="${tareas}" var="tarea">
+														<tr>
+															<td>
+																${tarea.name}
+															</td>
+															<td>
+															 	<input type="text" name="fecha"><br>
+															</td>
+															<td>
+																<input type="text" name="proyecto"><br>
+															</td>
+															<td>
+																<label style="" class="pull-left">
+											                    	<input class="ios-switch"  type="checkbox">
+											                		<div class="switch"></div>
+											               		</label>
+															</td>
+															<td>
+																<a href="url" class="btn btn-primary">Guardar</a>
+																<a href="url" class="btn btn-primary">Finalizar</a>
+																<a href="url" class="btn btn-primary">Eliminar</a>
+															</td>				
+														</tr>
+													</g:each>
 												</tbody>
 											</table>
 

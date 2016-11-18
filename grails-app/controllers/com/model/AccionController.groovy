@@ -4,7 +4,10 @@ import grails.plugin.springsecurity.annotation.Secured
 @Secured('ROLE_ADMIN')
 class AccionController {
 
+    def springSecurityService
     def index() { 
-		render view:'accion'
+    	def user = springSecurityService.currentUser
+        def tareas =  Tarea.findAllByTypeAndOwner(3,user)
+        render view:'accion',model:[tareas:tareas]
     }
 }
