@@ -25,11 +25,8 @@
 													Nombre Tarea
 													</th>
 													<th>
-													Fecha de creación
+													Fecha de Notificación
 													</th>													
-													<th>
-													Proyecto
-													</th>
 													<th>
 													Enviar Notificación
 													</th>
@@ -47,9 +44,7 @@
 															</td>
 															<td>
 															 	<input type="date" name="bday">
-															</td>
-															<td>
-																<input type="text" name="proyecto"><br>
+															 	<input type="time" name="hora">
 															</td>
 															<td>
 																<label style="" class="pull-left">

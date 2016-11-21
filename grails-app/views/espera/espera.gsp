@@ -41,7 +41,8 @@
 																${tarea.name}
 															</td>
 															<td>
-															 	<input id="date${tarea.id}" type="date" name="bday" value="${tarea.scheduledDate.format('yyyy-MM-dd')}">
+															 	<input id="date${tarea.id}" type="date" name="bday"  value="${tarea.scheduledDate?tarea.scheduledDate.format('yyyy-MM-dd'):''}">
+															 	<input id="time${tarea.id}" type="time" name="hora" value="${tarea.scheduledDate?tarea.scheduledDate.format('HH:mm'):''}">
 															</td>
 															<td>
 																<button class='btn btn-primary' onclick="guardar('${tarea.id}')">Guardar</button>
@@ -78,7 +79,7 @@
 
 <script type="text/javascript">
 	function guardar(id){
-		var fecha=$("#date"+id).val()
+		var fecha=$("#date"+id).val()+" "+ $("#time"+id).val() 
 		$.ajax({
 	        method: 'POST',
 	        url: "${createLink(action:'guardar', controller:'espera')}",
@@ -87,7 +88,8 @@
 	        	fecha:fecha
 	            },
 	        success: function(result) {
-	        	alert("bien")
+	        	alert("La tarea se guardo correctamente")
+	        	window.location.reload(true)
 	        },
 	        error: function(status, text, result, xhr) {
 	        	alert("mal")

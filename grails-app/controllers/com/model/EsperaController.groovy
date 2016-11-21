@@ -18,7 +18,7 @@ class EsperaController {
 	    	render status:404,text:"No se encontro la tarea"
 	        return
 		}
-		tareaGuardar.scheduledDate=new Date().parse("yyyy-MM-dd",params.fecha)
+		tareaGuardar.scheduledDate=new Date().parse("yyyy-MM-dd hh:mm",params.fecha)
 		tareaGuardar.save(flush:true,failOnError:true)
         render status:200
         

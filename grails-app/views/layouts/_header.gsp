@@ -108,25 +108,25 @@
                   </li>
 				  <li class="sub-menu">
                       <g:link controller="proyecto" action="index">
-                          <i class="icon_document_alt"></i>
+                          <i class="icon_folder-open_alt"></i>
                           <span>Proyectos</span>
                       </g:link>
                   </li>       
                   <li class="sub-menu">
                       <g:link controller="espera" action="index">
-                          <i class="icon_desktop"></i>
+                          <i class="icon_stop_alt"></i>
                           <span>En Espera</span>
                       </g:link>
                   </li>
                   <li>
                       <g:link controller="accion" action="index">
-                          <i class="icon_genius"></i>
+                          <i class="icon_calendar"></i>
                           <span>Proximas Acciones</span>
                       </g:link>
                   </li>
                   <li>                     
                       <g:link controller="quizas" action="index">
-                          <i class="icon_table"></i>
+                          <i class="icon_question_alt"></i>
                           <span>Quizas</span>
                       </g:link>
                   </li>
